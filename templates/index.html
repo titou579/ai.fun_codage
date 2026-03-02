@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fun AI Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>💬 Fun AI Portal</h1>
+
+        <form method="POST">
+            <input type="text" name="message" placeholder="Pose ta question..." required>
+            <button type="submit">Envoyer</button>
+        </form>
+
+        {% if response %}
+            <div class="response">
+                {{ response|safe }}
+            </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
